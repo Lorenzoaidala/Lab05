@@ -27,7 +27,7 @@
                         <Insets left="10.0" top="20.0" />
                      </HBox.margin>
                   </TextField>
-                  <Button fx:id="btnCalcola" mnemonicParsing="false" onAction="#doCalcola" prefHeight="25.0" prefWidth="130.0" text="Calcola Anagrammi">
+                  <Button fx:id="btnAnagrammi" mnemonicParsing="false" onAction="#doAnagramma" prefHeight="25.0" prefWidth="130.0" text="Calcola Anagrammi">
                      <HBox.margin>
                         <Insets left="10.0" top="20.0" />
                      </HBox.margin>
@@ -39,7 +39,7 @@
                   <Insets bottom="10.0" left="20.0" />
                </VBox.margin>
             </Label>
-            <TextArea fx:id="txtCorretti" editable="false" prefHeight="92.0" prefWidth="384.0">
+            <TextArea fx:id="txtRisultatoCorretto" editable="false" prefHeight="92.0" prefWidth="384.0">
                <VBox.margin>
                   <Insets left="10.0" right="10.0" />
                </VBox.margin>
@@ -49,7 +49,7 @@
                   <Insets bottom="10.0" left="20.0" top="20.0" />
                </VBox.margin>
             </Label>
-            <TextArea fx:id="txtErrati" editable="false" prefHeight="164.0" prefWidth="364.0">
+            <TextArea fx:id="txtRisultatoErrato" editable="false" prefHeight="164.0" prefWidth="364.0">
                <VBox.margin>
                   <Insets left="10.0" right="10.0" />
                </VBox.margin>

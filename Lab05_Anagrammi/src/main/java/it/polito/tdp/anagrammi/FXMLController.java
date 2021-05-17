@@ -1,6 +1,7 @@
 package it.polito.tdp.anagrammi;
 
 import java.net.URL;
+import java.util.Collections;
 import java.util.ResourceBundle;
 import java.util.Set;
 
@@ -14,6 +15,8 @@ import javafx.scene.control.TextField;
 public class FXMLController {
 
 	Model model;
+	Set<String> anagrammiCorretti;
+	Set<String> anagrammiErrati;
     @FXML
     private ResourceBundle resources;
 
@@ -40,6 +43,7 @@ public class FXMLController {
     	txtRisultatoCorretto.clear();
     	txtRisultatoErrato.clear();
     	
+    	
     	String parola = txtParola.getText();
     	if(parola.length()<2) {
     		txtRisultatoCorretto.appendText("Parola inserita troppo corta");
@@ -50,11 +54,11 @@ public class FXMLController {
     		txtRisultatoErrato.appendText("Parola inserita troppo lunga");	
     	}
     	
-    	Set<String> anagrammiCorretti = model.getAnagrammiCorretti(parola);
+    	 anagrammiCorretti = model.getAnagrammiCorretti(parola);
     	for(String s: anagrammiCorretti) {
     		txtRisultatoCorretto.appendText(s+"\n");
     	}
-    	Set<String> anagrammiErrati = model.getAnagrammiErrati(parola);
+    	 anagrammiErrati = model.getAnagrammiErrati(parola);
     	for(String s: anagrammiErrati) {
     		txtRisultatoErrato.appendText(s+"\n");
     	}
@@ -66,6 +70,8 @@ public class FXMLController {
     	txtParola.clear();
     	txtRisultatoCorretto.clear();
     	txtRisultatoErrato.clear();
+    	anagrammiCorretti.clear();
+    	anagrammiErrati.clear();
     }
 
     @FXML
