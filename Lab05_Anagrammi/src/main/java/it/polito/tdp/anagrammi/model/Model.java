@@ -8,19 +8,18 @@ public class Model {
 	Ricorsione ricorsione = new Ricorsione();
 	DizionarioDAO dao = new DizionarioDAO();
 
-	public Set<String> getAnagrammiCorretti(String parola){
-
-		List<String> anagrammi =ricorsione.anagramma(parola);
-		Set<String> paroleCorrette = new HashSet<String>();
+	public Set<String> getAnagrammi(String parola){
+		return ricorsione.anagramma(parola);
+		/*Set<String> paroleCorrette = new HashSet<String>();
 		for(String s: anagrammi) {
 			if(dao.isCorrect(s)) {
 				paroleCorrette.add(s);
 			}
 		}
-		return paroleCorrette;
+		return paroleCorrette;*/
 	}
 	
-	public Set<String> getAnagrammiErrati(String parola){
+	/*public Set<String> getAnagrammiErrati(String parola){
 		List<String> anagrammi =ricorsione.anagramma(parola);
 		Set<String> paroleErrate = new HashSet<String>();
 		for(String s: anagrammi) {
@@ -29,6 +28,9 @@ public class Model {
 			}
 		}
 		return paroleErrate;
+	}*/
+	public boolean isCorrect(String anagramma) {
+		return dao.isCorrect(anagramma);
 	}
 
 }

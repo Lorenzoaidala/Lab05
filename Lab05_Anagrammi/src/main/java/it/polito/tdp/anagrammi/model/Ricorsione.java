@@ -3,9 +3,9 @@ import java.util.*;
 
 public class Ricorsione {
 
-	List<String> anagrammi = new ArrayList<String>();
+	Set<String> anagrammi = new HashSet<String>();
 	
-	public List<String> anagramma(String parola){
+	public Set<String> anagramma(String parola){
 		List<Character> rimanenti = new ArrayList<Character>();
 		for(int i =0; i<parola.length(); i++) {
 			rimanenti.add(parola.charAt(i));

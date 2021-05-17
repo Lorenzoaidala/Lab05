@@ -15,8 +15,7 @@ import javafx.scene.control.TextField;
 public class FXMLController {
 
 	Model model;
-	Set<String> anagrammiCorretti;
-	Set<String> anagrammiErrati;
+	
     @FXML
     private ResourceBundle resources;
 
@@ -54,13 +53,14 @@ public class FXMLController {
     		txtRisultatoErrato.appendText("Parola inserita troppo lunga");	
     	}
     	
-    	 anagrammiCorretti = model.getAnagrammiCorretti(parola);
-    	for(String s: anagrammiCorretti) {
-    		txtRisultatoCorretto.appendText(s+"\n");
-    	}
-    	 anagrammiErrati = model.getAnagrammiErrati(parola);
-    	for(String s: anagrammiErrati) {
-    		txtRisultatoErrato.appendText(s+"\n");
+    	Set<String> anagrammi = model.getAnagrammi(parola);
+    	for(String s: anagrammi) {
+    		if(model.isCorrect(s)) {
+    			txtRisultatoCorretto.appendText(s+"\n");
+    		}
+    		else {
+    			txtRisultatoErrato.appendText(s+"\n");
+    		}
     	}
     }
 
@@ -70,8 +70,6 @@ public class FXMLController {
     	txtParola.clear();
     	txtRisultatoCorretto.clear();
     	txtRisultatoErrato.clear();
-    	anagrammiCorretti.clear();
-    	anagrammiErrati.clear();
     }
 
     @FXML
