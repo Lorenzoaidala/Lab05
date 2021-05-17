@@ -31,6 +31,16 @@ public class DizionarioDAO {
 			PreparedStatement st = conn.prepareStatement(sql);
 			st.setString(1, parola);
 			ResultSet rs = st.executeQuery();
+			if(rs.next()) {
+				conn.close();
+				return true;
+			}
+				
+			else {
+				conn.close();
+				return false;
+			}
+			
 			
 		} catch(SQLException e) {
 			e.printStackTrace();

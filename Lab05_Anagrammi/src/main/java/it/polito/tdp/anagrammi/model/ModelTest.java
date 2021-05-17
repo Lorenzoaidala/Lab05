@@ -6,8 +6,8 @@ public class ModelTest {
 	public static void main(String[] args) {
 			
 		Model mode = new Model();
-		List<String> esempio = mode.getAnagrammiCorretti("cane");
-		List<String> esempio2 = mode.getAnagrammiErrati("cane");
+		Set<String> esempio = mode.getAnagrammiCorretti("cane");
+		Set<String> esempio2 = mode.getAnagrammiErrati("cane");
 		System.out.println(esempio);
 		System.out.println(esempio2);
 	}
