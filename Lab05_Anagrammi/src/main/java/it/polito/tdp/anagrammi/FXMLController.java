@@ -2,6 +2,7 @@ package it.polito.tdp.anagrammi;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.Set;
 
 import it.polito.tdp.anagrammi.model.Model;
 import javafx.event.ActionEvent;
@@ -36,7 +37,27 @@ public class FXMLController {
 
     @FXML
     void doAnagramma(ActionEvent event) {
-
+    	txtRisultatoCorretto.clear();
+    	txtRisultatoErrato.clear();
+    	
+    	String parola = txtParola.getText();
+    	if(parola.length()<2) {
+    		txtRisultatoCorretto.appendText("Parola inserita troppo corta");
+    		txtRisultatoErrato.appendText("Parola inserita troppo corta");
+    	}
+    	if(parola.length()>8) {
+    		txtRisultatoCorretto.appendText("Parola inserita troppo lunga");
+    		txtRisultatoErrato.appendText("Parola inserita troppo lunga");	
+    	}
+    	
+    	Set<String> anagrammiCorretti = model.getAnagrammiCorretti(parola);
+    	for(String s: anagrammiCorretti) {
+    		txtRisultatoCorretto.appendText(s+"\n");
+    	}
+    	Set<String> anagrammiErrati = model.getAnagrammiErrati(parola);
+    	for(String s: anagrammiErrati) {
+    		txtRisultatoErrato.appendText(s+"\n");
+    	}
     }
 
     @FXML
