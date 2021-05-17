@@ -6,7 +6,7 @@ public class TestDAO {
 		// TODO Auto-generated method stub
 
 		DizionarioDAO dao = new DizionarioDAO();
-		System.out.println(dao.getParoleCorrette());
+	//	System.out.println(dao.getParoleCorrette());
 	}
 
 }

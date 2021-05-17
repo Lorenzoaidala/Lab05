@@ -5,7 +5,7 @@ import java.util.*;
 public class DizionarioDAO {
 	
 
-	public List<String> getParoleCorrette(){
+	/*public List<String> getParoleCorrette(){
 		List<String> paroleCorrette = new ArrayList<String>();
 		String sql ="SELECT nome FROM parola ";
 		try {
@@ -23,7 +23,7 @@ public class DizionarioDAO {
 			e.printStackTrace();
 			throw new RuntimeException("Connessione fallita", e);
 		}
-	}
+	}*/
 	public boolean isCorrect(String parola) {
 		String sql = "SELECT nome FROM parola WHERE nome=?";
 		try {

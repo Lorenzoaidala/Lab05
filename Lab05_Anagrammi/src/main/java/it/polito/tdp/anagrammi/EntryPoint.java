@@ -14,17 +14,18 @@ public class EntryPoint extends Application {
 
 	@Override
 	public void start(Stage stage) throws Exception {
+		FXMLController controller;
 		FXMLLoader loader = FXMLLoader.load(getClass().getResource("/fxml/Scene.fxml"));
 		Parent root = loader.load();
 		Scene scene = new Scene(root);
-		
-		
-		FXMLController controller = loader.getController();
-		
+
+
+		controller = loader.getController();
+
 		Model model = new Model();
 		controller.setModel(model);
-		
-		
+
+
 		scene.getStylesheets().add("/styles/Styles.css");
 
 		stage.setTitle("Calcola Anagrammi");
