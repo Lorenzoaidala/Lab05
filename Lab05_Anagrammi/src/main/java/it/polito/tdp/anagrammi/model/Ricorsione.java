@@ -17,6 +17,7 @@ public class Ricorsione {
 	public void cerca(String parziale, int livello, List<Character> rimanenti) {
 		if(rimanenti.size()==0) {
 			anagrammi.add(parziale);
+			return;
 		}
 
 		for(Character c : rimanenti) {

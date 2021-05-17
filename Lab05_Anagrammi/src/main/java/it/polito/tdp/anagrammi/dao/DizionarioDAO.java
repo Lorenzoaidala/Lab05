@@ -24,4 +24,17 @@ public class DizionarioDAO {
 			throw new RuntimeException("Connessione fallita", e);
 		}
 	}
+	public boolean isCorrect(String parola) {
+		String sql = "SELECT nome FROM parola WHERE nome=?";
+		try {
+			Connection conn = DBConnect.getConnection();
+			PreparedStatement st = conn.prepareStatement(sql);
+			st.setString(1, parola);
+			ResultSet rs = st.executeQuery();
+			
+		} catch(SQLException e) {
+			e.printStackTrace();
+			throw new RuntimeException("DB error", e);
+		}
+	}
 }

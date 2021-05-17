@@ -20,9 +20,9 @@ public class Model {
 		return paroleCorrette;
 	}
 	
-	public List<String> getAnagrammiErrati(String parola){
+	public Set<String> getAnagrammiErrati(String parola){
 		List<String> anagrammi =ricorsione.anagramma(parola);
-		List<String> paroleErrate = new ArrayList<String>();
+		Set<String> paroleErrate = new HashSet<String>();
 		for(String s: anagrammi) {
 			if(!dao.getParoleCorrette().contains(s)) {
 				paroleErrate.add(s);
