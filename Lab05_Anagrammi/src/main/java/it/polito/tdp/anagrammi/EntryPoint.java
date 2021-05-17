@@ -16,14 +16,18 @@ public class EntryPoint extends Application {
 	public void start(Stage stage) throws Exception {
 		FXMLLoader loader = FXMLLoader.load(getClass().getResource("/fxml/Scene.fxml"));
 		Parent root = loader.load();
-		Model model = new Model();
+		Scene scene = new Scene(root);
+		
+		
 		FXMLController controller = loader.getController();
+		
+		Model model = new Model();
 		controller.setModel(model);
 		
-		Scene scene = new Scene(root);
+		
 		scene.getStylesheets().add("/styles/Styles.css");
 
-		stage.setTitle("JavaFX and Maven");
+		stage.setTitle("Calcola Anagrammi");
 		stage.setScene(scene);
 		stage.show();
 	}
