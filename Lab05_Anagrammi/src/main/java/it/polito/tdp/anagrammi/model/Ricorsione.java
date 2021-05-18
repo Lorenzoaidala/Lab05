@@ -3,9 +3,10 @@ import java.util.*;
 
 public class Ricorsione {
 
-	Set<String> anagrammi = new HashSet<String>();
+	Set<String> anagrammi;
 	
 	public Set<String> anagramma(String parola){
+		anagrammi = new HashSet<String>(); // inizializzare set dentro il metodo per "scartare" risultati precedenti
 		List<Character> rimanenti = new ArrayList<Character>();
 		for(int i =0; i<parola.length(); i++) {
 			rimanenti.add(parola.charAt(i));
