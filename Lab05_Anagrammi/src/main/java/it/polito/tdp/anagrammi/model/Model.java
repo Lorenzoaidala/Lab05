@@ -7,9 +7,11 @@ import it.polito.tdp.anagrammi.dao.DizionarioDAO;
 public class Model {
 	Ricorsione ricorsione = new Ricorsione();
 	DizionarioDAO dao = new DizionarioDAO();
+	Set<String> soluzione = new HashSet();
 
 	public Set<String> getAnagrammi(String parola){
-		return ricorsione.anagramma(parola);
+		soluzione = ricorsione.anagramma(parola);
+		return soluzione;
 		/*Set<String> paroleCorrette = new HashSet<String>();
 		for(String s: anagrammi) {
 			if(dao.isCorrect(s)) {
